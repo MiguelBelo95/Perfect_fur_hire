@@ -11,6 +11,22 @@
   </head>
 
   <body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <%= link_to "Perfect fur hire", pets_path, class: "navbar-brand" %>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <!-- user_signed_in? returns true only if there is a user currently logged in -->
+          <!-- this is a helper provided by devise -->
+          <% if user_signed_in? %>
+          <li class="nav-item active">
+            <%= link_to "Add a pet", new_pet_path, class: "nav-link" %>
+          </li>
+          <% end %>
+        </ul>
+      </div>
+    </nav>
+
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
     <%= yield %>
