@@ -1,0 +1,32 @@
+<h1>Bookings List</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Start Date</th>
+      <th>End Date</th>
+      <th>Booking Note</th>
+      <th>User</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @bookings.each do |booking| %>
+      <tr>
+        <td><%= booking.start_date %></td>
+        <td><%= booking.end_date %></td>
+        <td><%= booking.booking_note %></td>
+        <td><%= booking.user.name %></td>
+        <td>
+          <%= link_to "Edit", edit_booking_path(booking) %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to "New Booking", new_booking_path %>
+
+
+
+<%# //  happy codding with yusuf people. %>
