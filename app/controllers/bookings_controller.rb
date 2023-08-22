@@ -1,5 +1,12 @@
 class BookingsController < ApplicationController
   before_action :set_booking, only: [:edit, :update]
+
+  def index
+    @user = User.find(params :user_id)
+    @bookings = Booking.where(user_id: @user.id)
+
+  end
+
   def new
     @booking = Booking.new
   end
@@ -8,15 +15,23 @@ class BookingsController < ApplicationController
     user = User.find(params[:user_id])
     @booking = Booking.new(booking_params)
     @booking.user = user
+
+    if @booking.save
+      redirect_to bookings_path, notice: 'Booking was successfully created.'
+    else
+      render :new
+    end
   end
 
   def edit
   end
 
   def update
-    @booking.update(booking_params)
-    raise
-    # redirect_to restaurant_path(@restaurant)
+    if @booking.update(booking_params)
+      redirect_to bookings_path, notice: 'Booking was successfully updated.'
+    else
+      render :edit
+    end
   end
 
   private
