@@ -5,5 +5,7 @@ Rails.application.routes.draw do
   resources :pets
   resources :pages
 
+  resources :users
   get "profile", to: "users#profile"
+
 end
