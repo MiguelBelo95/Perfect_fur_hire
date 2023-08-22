@@ -4,22 +4,22 @@ class BookingsController < ApplicationController
   def index
     @user = User.find(params :user_id)
     @bookings = Booking.where(user_id: @user.id)
-
   end
 
   def new
+    @pet = Pet.find(params[:pet_id])
     @booking = Booking.new
   end
 
   def create
-    user = User.find(params[:user_id])
-    @booking = Booking.new(booking_params)
-    @booking.user = user
+    @pet = Pet.find(params[:pet_id])
+    @booking = @pet.bookings.build(booking_params)
+    @booking.user = current_user
 
     if @booking.save
-      redirect_to bookings_path, notice: 'Booking was successfully created.'
+      redirect_to @pet, notice: 'Booking was successfully created.'
     else
-      render :new
+      render "pets/show", status: :unprocessable_entity
     end
   end
 
