@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
-
-  def show
-    @user = User.find(params[:id])
-  end
-
+  # This is a comment
+    def profile
+        @user = current_user
+        @bookings = @user.bookings
+    end
 end
