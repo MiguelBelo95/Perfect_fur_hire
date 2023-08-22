@@ -1,0 +1,23 @@
+<div class="container mt-5">
+  <h1><%= @pet.name %></h1>
+    <dt>Name</dt>
+    <dl><%= @pet.name %></dl>
+    <dt>Breed</dt>
+    <dl><%= @pet.breed %></dl>
+    <dt>Description</dt>
+    <dl><%= @pet.description %></dl>
+  </dl>
+  <%# <%= link_to "Edit", edit_pet_path(@pet), class: "btn btn-outline-dark" %>
+  <%# <%= link_to "Delete", pet_path(@pet), class: "btn btn-outline-dark", method: :delete %>
+
+  <%# redirect to the indivisual pet page %>
+  <%# <%= redirect_to "Pet page",  %>
+
+
+</div>
+
+
+
+<%#
+ validates :name, presence: true
+validates :breed, presence: true %>
