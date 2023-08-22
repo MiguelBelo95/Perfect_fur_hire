@@ -1,11 +1,11 @@
 <div class="container mt-5">
 
-  <h1>Create pet</h1>
+  <h1>Add a pet</h1>
   <%= simple_form_for @pet do |f| %>
     <%= f.input :name %>
     <%= f.input :breed %>
     <%= f.input :description %>
-    <%= f.button :submit %>
+    <%= f.button :submit, class: "btn btn-outline-dark" %>
   <% end %>
 
 </div>

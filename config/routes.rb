@@ -8,4 +8,9 @@ Rails.application.routes.draw do
   end
 
   resources :bookings, only: [:edit, :update]
+  
+  resources :pages
+  resources :users
+  get "profile", to: "users#profile"
+
 end
