@@ -7,7 +7,6 @@ class PetsController < ApplicationController
 
   def show
     @pet = Pet.find(params[:id])
-    # redirect_to
   end
 
   def new
@@ -23,7 +22,6 @@ class PetsController < ApplicationController
       render :new
     end
   end
-
 
   private
 
