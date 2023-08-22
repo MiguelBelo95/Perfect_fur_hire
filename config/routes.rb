@@ -3,4 +3,7 @@ Rails.application.routes.draw do
   root to: "pages#home"
 
   resources :pets
+  resources :pages
+
+  get "profile", to: "users#profile"
 end
