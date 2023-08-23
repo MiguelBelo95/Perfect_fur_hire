@@ -9,32 +9,37 @@
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
 
-
-
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Chicle&display=swap" rel="stylesheet">
   </head>
 
   <body>
 
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark justify-content-end">
+
       <%= link_to "Perfect fur hire", "#", class: "navbar-brand" %>
+
       <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav">
+        <ul class="nav justify-content-end">
           <!-- user_signed_in? returns true only if there is a user currently logged in -->
           <!-- this is a helper provided by devise -->
 
           <% if user_signed_in? %>
-            <li class="nav-item active">
-              <%= link_to "Add a pet", new_pet_path, class: "nav-link" %>
             <li class="nav-item">
-              <%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete}, class: "nav-link" %>
-            </li>
-          <% else %>
-            <li class="nav-item active">
-              <%= link_to "Login", new_user_session_path, class: "nav-link" %>
-            </li>
-          <% end %>
-        </ul>
+              <%= link_to "Add a pet", new_pet_path, class: "nav-link" %>
+              <li class="nav-item">
+                <%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete}, class: "nav-link" %>
+              </li>
+            <% else %>
+              <li class="nav-item">
+                <%= link_to "Login", new_user_session_path, class: "nav-link" %>
+              </li>
+            <% end %>
+          </ul>
+        </div>
       </div>
+
     </nav>
 
     <p class="notice"><%= notice %></p>
