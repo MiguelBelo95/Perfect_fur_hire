@@ -89,13 +89,13 @@ pucchini.save!
 
 poppet.availabilities.create(
   start_date: 1.day.ago,
-  end_date: 10.days.from_now
+  end_date: 300.days.from_now
 )
 
-poppet.availabilities.create(
-  start_date: 50.days.from_now,
-  end_date: 100.days.from_now
-)
+# poppet.availabilities.create(
+#   start_date: 50.days.from_now,
+#   end_date: 100.days.from_now
+# )
 
 pet_renter.bookings.create(
   pet: poppet,

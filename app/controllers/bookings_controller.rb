@@ -2,8 +2,7 @@ class BookingsController < ApplicationController
   before_action :set_booking, only: [:edit, :update]
 
   def index
-    @user = User.find(params :user_id)
-    @bookings = Booking.where(user_id: @user.id)
+    @bookings = current_user.bookings
   end
 
   def new

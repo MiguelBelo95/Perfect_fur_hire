@@ -1,32 +1,23 @@
-<h1>Bookings List</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Start Date</th>
-      <th>End Date</th>
-      <th>Booking Note</th>
-      <th>User</th>
-      <th>Actions</th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @bookings.each do |booking| %>
+<div class="container">
+  <h1>Bookings List</h1>
+  <table class="table table-striped">
+    <thead class="thead-dark">
       <tr>
-        <td><%= booking.start_date %></td>
-        <td><%= booking.end_date %></td>
-        <td><%= booking.booking_note %></td>
-        <td><%= booking.user.name %></td>
-        <td>
-          <%= link_to "Edit", edit_booking_path(booking) %>
-        </td>
+        <th scope="col">Start Date</th>
+        <th scope="col">End Date</th>
+        <th scope="col">Booking Note</th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<%= link_to "New Booking", new_booking_path %>
-
-
-
-<%# //  happy codding with yusuf people. %>
+    </thead>
+    <tbody>
+      <% @bookings.each do |booking| %>
+        <tr>
+          <td><%= booking.start_date.day%>/<%= booking.start_date.month%>/<%= booking.start_date.year%></td>
+          <td><%= booking.end_date.day%>/<%= booking.end_date.month%>/<%= booking.end_date.year%></td>
+          <td><%= booking.booking_note %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+  <%= link_to "Back to homepage", root_path %>
+</div>
