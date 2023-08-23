@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>PerfectFurHire</title>
+    <title>Perfect Fur Hire</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -27,10 +27,14 @@
               <%= link_to "Add a pet", new_pet_path, class: "nav-link" %>
             <li class="nav-item">
               <%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete}, class: "nav-link" %>
+            
             </li>
           <% else %>
             <li class="nav-item active">
-              <%= link_to "Login", new_user_session_path, class: "nav-link" %>
+          <%= link_to "Home", root_path, class: "nav-link btn btn-outline-home" %>   <!-- Adding the new "home" button -->
+        </li>
+            <li class="nav-item active">
+              <%= link_to "Login", new_user_session_path, class: "nav-link btn btn-outline-success" %>
             </li>
           <% end %>
         </ul>
@@ -42,3 +46,7 @@
     <%= yield %>
   </body>
 </html>
+
+
+
+
