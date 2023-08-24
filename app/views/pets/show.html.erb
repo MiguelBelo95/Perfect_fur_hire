@@ -1,37 +1,19 @@
-<div class="container mt-5">
-
-  <div class="row">
-    <div class="col-sm-4">
-
-      <h1><%= @pet.name %></h1>
-
-      <div class="d-flex flex-row flex-wrap w-75">
-        <div class="card m-10" style="width: 18rem;" >
-          <%= image_tag @pet.image, class: "card-img-top", style: "width: 280px;" %>
-          <div class="card-body">
-            <p class="card-text"><%= @pet.description %></p>
-          </div>
-        </div>
+<div class="container d-flex flex-column">
+  <h1 class="my-3">Meet <%= @pet.name %></h1>
+  <div class="col-8 d-flex align-self-center">
+    <div class="col-6 mx-5">
+      <%= image_tag @pet.image, class: "rounded align-self-center card-img-top", style: "width: 280px;" %>
+      <div class="card-body">
+        <p class="card-text my-4"><%= @pet.description %></p>
       </div>
     </div>
 
-    <div class="col-sm-4">
-      <h1>Bookings</h1>
-      <%= simple_form_for [@pet, @booking] do |f| %>
-        <%= f.input :start_date %>
-        <%= f.input :end_date %>
-        <%= f.input :booking_note %>
-        <%= f.error :base, class: "text-danger" %>
-        <%= f.submit %>
-      <% end %>
-
+    <div class="col-6" data-controller="pets">
+      <%= render "shared/form", booking: @booking %>
       <% if current_user == @pet.user %>
-        <%= link_to "Delete", pet_path(@pet), class: "btn btn-outline-dark", "data-turbo-method" => :delete %>
+        <%= link_to "Delete", pet_path(@pet), class: "btn btn-outline-dark my-5", "data-turbo-method" => :delete %>
       <% end %>
-
-      <div class="mt-2">
-        <%= link_to "Return to the list", pets_path %>
-      </div>
+      <%= link_to "Return to pets", pets_path, class: "btn btn-outline-dark my-4" %>
     </div>
   </div>
 </div>
