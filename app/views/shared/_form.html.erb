@@ -1,0 +1,16 @@
+<%= simple_form_for [@pet, @booking] do |f| %>
+        <div data-controller="datepicker">
+            <% if @pet.availabilities.count > 0 %>
+              <div id="booking-date-form" data-sdate="<%= @pet.availabilities[0].start_date %>" data-edate="<%= @pet.availabilities[0].end_date %>">
+              <%= f.input :booking_date, as: :string %>
+              </div>
+            <% else %>
+              <p>Apologies but <%= @pet.name %> is currently unavailable</p>
+            <% end %>
+        </div>
+        <div class="my-3">
+          <%= f.input :booking_note %>
+        </div>
+        <%= f.error :base, class: "text-danger" %>
+        <%= f.submit %>
+<% end %>
