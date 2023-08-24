@@ -1,9 +1,17 @@
 class PetsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
 
-  def index
-    @pets = Pet.all
+##MapBox
+def index
+  @pets = Pet.all
+  # The `geocoded` scope filters only flats with coordinates
+  @markers = @pets.geocoded.map do |pet|
+    {
+      lat: pet.latitude,
+      lng: pet.longitude
+    }
   end
+end
 
   def show
     @pet = Pet.find(params[:id])
@@ -30,6 +38,9 @@ class PetsController < ApplicationController
     @pet.destroy! if current_user == @pet.user
     redirect_to pets_path
   end
+
+
+#MapBox
 
   private
 
