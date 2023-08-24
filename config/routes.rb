@@ -12,5 +12,6 @@ Rails.application.routes.draw do
   resources :pages
   resources :users
   get "profile", to: "users#profile"
+  get "about_us", to: "pages#about_us", as: :about
 
 end
