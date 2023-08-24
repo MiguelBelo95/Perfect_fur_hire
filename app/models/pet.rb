@@ -9,6 +9,9 @@ class Pet < ApplicationRecord
   validates :breed, presence: true
   validates :image, presence: true
 
+  geocoded_by :address
+  after_validation :geocode, if: :will_save_change_to_address?
+
   def available?(start_date, end_date)
     Availability
       .where(pet: self)
