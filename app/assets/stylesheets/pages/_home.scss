@@ -1,61 +1,61 @@
 
+
 // Specific CSS for your home-page
 video {
-    position: fixed;
-    top: 0;
-    z-index: -1;
-  }
-
-  body {
-    // color: white;
-  }
-
-  .home-page {
-    h1, h4 {
-      color: white;
-      font-family: 'Chicle', cursive;
-      font-size: 62px;
-    }
-  }
-
-  .btn-ghost {
-    color: black;
-    border: 3px solid black;
-    padding: 8px 24px;
-    border-radius: 50px;
-    font-weight: lighter;
-    opacity: 0.6;
-    transition: opacity 0.3s ease;
-  }
-  
-  .btn-ghost:hover {
-    opacity: 1;
-  }
-
-.li {
-  float: right;
-  color: red;
+  position: fixed;
+  top: 0;
+  z-index: -1;
 }
 
-h1 {
-  text-align: center;
+#audio-landing {
+  margin-top: 300px;
 }
 
+.btn-ghost {
+  color: black;
+  border: 3px solid black;
+  padding: 8px 24px;
+  border-radius: 50px;
+  font-weight: lighter;
+  opacity: 0.6;
+  transition: opacity 0.3s ease;
+}
+
+.btn-ghost:hover {
+  opacity: 1;
+}
 
 .brand-name {
-  font-family: Chicle;
-  font-size: 135px;
+font-family: Chicle;
+font-size: 135px;
+// position: absolute;
+// top: 50%;
+// left: 50%;
+// transform: translate(-50%, -50%);
+color: orange;
+}
+
+.viewport-header {
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  color: orange;
-}
-
-.call-to-action-image-container {
-
-  background-image: url("../assets/images/top.jpeg");
+  height: 100vh;
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.home-cta {
 
 }
 
+.cta-link {
+  border-color: white;
+  color: white;
+  font-size: larger !important;
+}
+
+.cta-link:hover {
+  background-color: orange;
+  border-color: orange;
+}

@@ -8,7 +8,7 @@
       <%# <div class="cards"> %>
       <div class="d-flex flex-row flex-wrap">
         <% @pets.each do |pet| %>
-          <div class="card m-1" style="width: 200px;" ><%# ------size--CARDS--------- %>
+          <div class="card m-2" style="width: 200px;" ><%# ------size--CARDS--------- %>
             <%= image_tag pet.image, class: "card-img-top", style: "width: auto; height:auto; object-fit: cover; border-radius: 3%;" %>
             <div class="card-body">
               <h5 class="card-title"><%= pet.name %></h5>
