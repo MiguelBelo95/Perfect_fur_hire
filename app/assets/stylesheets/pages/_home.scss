@@ -1,3 +1,37 @@
+
+// Specific CSS for your home-page
+video {
+    position: fixed;
+    top: 0;
+    z-index: -1;
+  }
+
+  body {
+    // color: white;
+  }
+
+  .home-page {
+    h1, h4 {
+      color: white;
+      font-family: 'Chicle', cursive;
+      font-size: 62px;
+    }
+  }
+
+  .btn-ghost {
+    color: black;
+    border: 3px solid black;
+    padding: 8px 24px;
+    border-radius: 50px;
+    font-weight: lighter;
+    opacity: 0.6;
+    transition: opacity 0.3s ease;
+  }
+  
+  .btn-ghost:hover {
+    opacity: 1;
+  }
+
 .li {
   float: right;
   color: red;
@@ -24,3 +58,4 @@ h1 {
   text-align: center;
 
 }
+

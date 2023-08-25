@@ -1,13 +1,12 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>PerfectFurHire</title>
+    <title>Perfect Fur Hire</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
-
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Chicle&display=swap" rel="stylesheet">
@@ -15,42 +14,14 @@
     <%# MAPBox Api %>
     <link href="https://api.mapbox.com/mapbox-gl-js/v2.11.0/mapbox-gl.css" rel="stylesheet">
     <%# End of MapBox %>
-
   </head>
 
   <body>
-
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-
-      <%= link_to "Perfect fur hire", "#", class: "navbar-brand" %>
-
-      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-        <ul class="nav justify-content-end">
-          <!-- user_signed_in? returns true only if there is a user currently logged in -->
-          <!-- this is a helper provided by devise -->
-
-          <% if user_signed_in? %>
-            <li class="nav-item">
-              <%= link_to "Add a pet", new_pet_path, class: "nav-link link-light" %>
-              <li class="nav-item">
-                <%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete}, class: "nav-link link-light" %>
-              </li>
-              <li class="nav-item">
-                <%= link_to "My Bookings", bookings_path, class: "nav-link link-light" %>
-              </li>
-            <% else %>
-              <li class="nav-item">
-                <%= link_to "Login", new_user_session_path, class: "nav-link link-light" %>
-              </li>
-            <% end %>
-          </ul>
-        </div>
-      </div>
-
-    </nav>
-
+    <%= render "shared/navbar"%>
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
     <%= yield %>
   </body>
+  
 </html>
+
