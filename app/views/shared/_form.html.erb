@@ -1,16 +1,26 @@
-<%= simple_form_for [@pet, @booking] do |f| %>
-        <div data-controller="datepicker">
-            <% if @pet.availabilities.count > 0 %>
-              <div id="booking-date-form" data-sdate="<%= @pet.availabilities[0].start_date %>" data-edate="<%= @pet.availabilities[0].end_date %>">
-              <%= f.input :booking_date, as: :string %>
-              </div>
-            <% else %>
-              <p>Apologies but <%= @pet.name %> is currently unavailable</p>
-            <% end %>
-        </div>
+<% if @pet.availabilities.count > 0 %>
+  <script>
+    window.petAvailabilities = <%= @pet.availabilities.to_json.html_safe %>;
+    window.petBookings = <%= @pet.bookings.to_json.html_safe %>;
+  </script>
+
+  <div data-controller="datepicker">
+    <%= simple_form_for [@pet, @booking] do |f| %>
+      <%= f.input :start_date, as: :hidden, input_html: { "data-datepicker-target" => "start" } %>
+      <%= f.input :end_date, as: :hidden, input_html: { "data-datepicker-target" => "end" } %>
+
+      <div data-datepicker-target="calendar"></div>
+      <% if user_signed_in? %>
         <div class="my-3">
           <%= f.input :booking_note %>
         </div>
         <%= f.error :base, class: "text-danger" %>
         <%= f.submit %>
+      <% else %>
+        <p>Plese <%= link_to "login", new_user_session_path %> to book a pet</p>
+      <% end %>
+    <% end %>
+  </div>
+<% else %>
+  <p>Apologies but <%= @pet.name %> is currently unavailable</p>
 <% end %>

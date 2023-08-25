@@ -14,12 +14,8 @@ class BookingsController < ApplicationController
 
   def create
     @pet = Pet.find(params[:pet_id])
-    @booking = @pet.bookings.build(booking_params)
-    raise
-    @booking.start_date = Time.parse(@booking.booking_date.split(" to ").first)
-    @booking.end_date = Time.parse(@booking.booking_date.split(" to ").last)
-    @booking.user = current_user
-    raise
+    @booking = @pet.bookings.build(booking_params.merge(user: current_user))
+    # @booking.user = current_user
     if @booking.save
       redirect_to @pet, notice: 'Booking was successfully created.'
     else
@@ -41,7 +37,7 @@ class BookingsController < ApplicationController
   private
 
   def booking_params
-    params.require(:booking).permit(:booking_date, :booking_note)
+    params.require(:booking).permit(:start_date, :end_date, :booking_note)
   end
 
   def set_booking

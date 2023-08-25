@@ -4,6 +4,7 @@ class PetsController < ApplicationController
 ##MapBox
 def index
   @pets = Pet.all
+  @pets = @pets.where(user_id: params[:user_id]) if params[:user_id]
   # The `geocoded` scope filters only flats with coordinates
   @markers = @pets.geocoded.map do |pet|
     {
