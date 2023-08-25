@@ -1,3 +1,4 @@
+
 <div class="container text-center home-page">
 
     <br>
@@ -29,3 +30,17 @@
   Your browser does not support the audio element.
 </audio>
 
+<div class="top-image">
+  <div class="call-to-action-image-container">
+    <%= image_tag("top.png", {:style => "width:100%" }) %>
+
+    <h2 class="brand-name">Perfect fur Hire</h2>
+
+    <div class="img-overlay">
+      <%= link_to "View all dogs", pets_path, class: "btn btn-md btn-warning" %>
+    </div>
+
+  </div>
+</div>
+
+<%# newuser = User.create( email: "ai@miyuki.ai", password: "password123", password_confirmation: "password123" ) %>

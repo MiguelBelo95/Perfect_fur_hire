@@ -1,0 +1,9 @@
+<h1>My page</h1>
+
+<% @bookings.each do |booking| %>
+  <h3>Owner</h3>
+  <%= booking.pet.user %>
+  <h3>Pet</h3>
+  <%= booking.pet %>
+
+<% end %>

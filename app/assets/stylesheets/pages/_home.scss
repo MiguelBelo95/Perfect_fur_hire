@@ -1,3 +1,4 @@
+
 // Specific CSS for your home-page
 video {
     position: fixed;
@@ -30,3 +31,31 @@ video {
   .btn-ghost:hover {
     opacity: 1;
   }
+
+.li {
+  float: right;
+  color: red;
+}
+
+h1 {
+  text-align: center;
+}
+
+
+.brand-name {
+  font-family: Chicle;
+  font-size: 135px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: orange;
+}
+
+.call-to-action-image-container {
+
+  background-image: url("../assets/images/top.jpeg");
+  text-align: center;
+
+}
+
