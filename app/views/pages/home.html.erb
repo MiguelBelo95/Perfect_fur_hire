@@ -1,14 +1,42 @@
-<div class="top-image">
-  <div class="call-to-action-image-container">
-    <%= image_tag("top.png", {:style => "width:100%" }) %>
+<%#
+<div class="home-page">
+  <video autoplay loop muted  class= "w-100">
+    <source src="<%= asset_path 'yusuf.mp4' " type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
 
-    <h2 class="brand-name">Perfect fur Hire</h2>
+  <audio controls autoplay style="float:right; margin: 1rem;">
+    <source src="<%= asset_path("jane.mp3") " type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
 
-    <div class="img-overlay">
-      <%= link_to "View all dogs", pets_path, class: "btn btn-md btn-warning" %>
-    </div>
+  <h2 class="brand-name">Perfect fur Hire</h2>
+  <a class="btn btn-ghost" href="#">View all pets</a>
+  <%# <%= link_to "View all pets", pets_path, class: "btn btn-ghost"
 
-  </div>
-</div>
+</div> %>
+
 
 <%# newuser = User.create( email: "ai@miyuki.ai", password: "password123", password_confirmation: "password123" ) %>
+
+
+<video autoplay loop muted  class= "w-100">
+    <source src="<%= asset_path 'yusuf.mp4' %>" type="video/mp4">
+    Your browser does not support the video tag.
+</video>
+
+<div class="container d-flex justify-content-center">
+  <header class="viewport-header">
+    <h2 class="brand-name">Perfect fur Hire</h2>
+    <div class="home-cta">
+      <%= link_to "Browse pets", pets_path, class: "btn btn-ghost cta-link" %>
+    </div>
+    <audio controls autoplay style="float:right; margin-top: 1rem; width: 250px;" id="audio-landing">
+      <source src="<%= asset_path("jane.mp3") %>" type="audio/mpeg" >
+      <%# Your browser does not support the audio element. %>
+    </audio>
+  </header>
+</div>
+
+
+<%# <a class="btn btn-ghost" href="#">View all pets</a> %>
