@@ -1,5 +1,6 @@
 class Pet < ApplicationRecord
   has_many :bookings
+
   has_many :availabilities
   belongs_to :user
   has_one_attached :image

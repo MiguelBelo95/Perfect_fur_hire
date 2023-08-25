@@ -1,12 +1,12 @@
 <div class="container">
 
-<div class="row">
+  <div class="row">
 
-  <div  id="dog-container" class="col-sm-8">
-<h1>List of pets</h1>
-    <%# -------START----CARDS------ %>
-    <%# <div class="cards"> %>
-    <div class="d-flex flex-row flex-wrap">
+    <div  id="dog-container" class="col-sm-8">
+      <h1>List of pets</h1>
+      <%# -------START----CARDS------ %>
+      <%# <div class="cards"> %>
+      <div class="d-flex flex-row flex-wrap">
         <% @pets.each do |pet| %>
           <div class="card m-1" style="width: 200px;" ><%# ------size--CARDS--------- %>
             <%= image_tag pet.image, class: "card-img-top", style: "width: auto; height:auto; object-fit: cover; border-radius: 3%;" %>
@@ -14,27 +14,26 @@
               <h5 class="card-title"><%= pet.name %></h5>
               <p class="card-text" style="font-size: x-small;"><%= pet.description %></p>
               <%= link_to "Book >", pet, class: "btn btn-primary" %>
-                </div>
+            </div>
           </div>
-          <% end %>
+        <% end %>
 
+      </div>
     </div>
-  </div>
 
-  <%# ------END--CARDS--------- %>
+    <%# ------END--CARDS--------- %>
 
-  <%# -------MAP-------- %>
-  <div id="map" class="col-sm-4 position-sticky sticky-top">
+    <%# -------MAP-------- %>
+    <div id="map" class="col-sm-4 position-sticky sticky-top">
       <div style="width: auto; height: 100vh;"
 
         data-controller="map"
 
-        mapbox://styles/dejwhitehead/cllpedsnb005501r7fvte4i64
-
         data-map-markers-value="<%= @markers.to_json %>"
         data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
       </div>
+    </div>
+    <%# -------END---MAP-------- %>
   </div>
-  <%# -------END---MAP-------- %>
 </div>
-</div>  <%# -------main container DIV-------- %>
+  <%# -------main container DIV-------- %>
