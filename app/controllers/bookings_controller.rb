@@ -1,3 +1,5 @@
+require 'time'
+
 class BookingsController < ApplicationController
   before_action :set_booking, only: [:edit, :update]
 
@@ -12,9 +14,8 @@ class BookingsController < ApplicationController
 
   def create
     @pet = Pet.find(params[:pet_id])
-    @booking = @pet.bookings.build(booking_params)
-    @booking.user = current_user
-
+    @booking = @pet.bookings.build(booking_params.merge(user: current_user))
+    # @booking.user = current_user
     if @booking.save
       redirect_to @pet, notice: 'Booking was successfully created.'
     else
