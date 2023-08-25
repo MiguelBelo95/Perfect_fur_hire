@@ -7,6 +7,8 @@ class Booking < ApplicationRecord
   validate :period_must_be_during_availability
 
   def period_must_be_during_availability
+    return unless start_date.present? && end_date.present?
+
     unless pet.available?(start_date, end_date)
       # the booking is not valid
       # since this is not related to a column in particular but to the
