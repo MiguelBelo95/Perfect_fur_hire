@@ -93,7 +93,12 @@ pucchini.save!
 
 poppet.availabilities.create(
   start_date: 1.day.ago,
-  end_date: 300.days.from_now
+  end_date: 7.days.from_now
+)
+
+poppet.availabilities.create(
+  start_date: 15.day.from_now,
+  end_date: 23.days.from_now
 )
 
 # poppet.availabilities.create(
