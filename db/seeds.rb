@@ -91,20 +91,6 @@ pucchini = pet_owner.pets.build(
 pucchini.image.attach(io: pucchini_image, filename: "pucchini.jpg", content_type: "image/jpeg")
 pucchini.save!
 
-poppet.availabilities.create(
-  start_date: 1.day.ago,
-  end_date: 7.days.from_now
-)
-
-poppet.availabilities.create(
-  start_date: 15.day.from_now,
-  end_date: 23.days.from_now
-)
-
-# poppet.availabilities.create(
-#   start_date: 50.days.from_now,
-#   end_date: 100.days.from_now
-# )
 
 pet_renter.bookings.create(
   pet: poppet,
@@ -179,5 +165,67 @@ frenchie = pet_owner.pets.build(
 )
 frenchie.image.attach(io: frenchie_image, filename: "frenchie.jpg", content_type: "image/jpeg")
 frenchie.save!
+
+#----BEGIN NEW SEED AVAILABILITY FRIDAY DAVID
+poppet.availabilities.create(
+  start_date: 1.day.ago,
+  end_date: 300.days.from_now
+)
+
+bubbles.availabilities.create(
+  start_date: 1.day.ago,
+  end_date: 300.days.from_now
+)
+
+tonny_the_teacup_poodle.availabilities.create(
+  start_date: 1.day.ago,
+  end_date: 300.days.from_now
+)
+
+pucchini.availabilities.create(
+  start_date: 1.day.ago,
+  end_date: 300.days.from_now
+)
+
+serra_mountain.availabilities.create(
+  start_date: 1.day.ago,
+  end_date: 300.days.from_now
+)
+
+cookie.availabilities.create(
+  start_date: 1.day.ago,
+  end_date: 300.days.from_now
+)
+
+koro.availabilities.create(
+  start_date: 1.day.ago,
+  end_date: 300.days.from_now
+)
+
+golden.availabilities.create(
+  start_date: 1.day.ago,
+  end_date: 300.days.from_now
+)
+
+choxies.availabilities.create(
+  start_date: 1.day.ago,
+  end_date: 300.days.from_now
+)
+
+choxies.availabilities.create(
+  start_date: 1.day.ago,
+  end_date: 300.days.from_now
+)
+
+frenchie.availabilities.create(
+  start_date: 1.day.ago,
+  end_date: 300.days.from_now
+)
+#------END OF NEW SEEDS FRI FOR AVAILABILITY
+
+# poppet.availabilities.create(
+#   start_date: 50.days.from_now,
+#   end_date: 100.days.from_now
+# )
 
 puts "All doggies are now in our DB! Yayyy!!"
